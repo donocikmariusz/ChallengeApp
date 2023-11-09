@@ -1,2 +1,3 @@
-﻿Console.WriteLine("Hello, World!");
+﻿Console.WriteLine("Witaj");
 Console.ReadLine();
+
