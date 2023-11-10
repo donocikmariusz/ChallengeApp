@@ -1,25 +1,24 @@
-﻿int[] grades = new int[365];
-string[] dayofWeeks = new string[7];
-dayofWeeks[0] = "poniedziałek";
-dayofWeeks[1] = "wtorek";
-dayofWeeks[2] = "środa";
-dayofWeeks[3] = "czwartek";
-dayofWeeks[4] = "piątek";
-dayofWeeks[5] = "sobota";
-dayofWeeks[6] = "niedziela";
+﻿long number = 1223445667;
+string numberAsString = number.ToString();
+char[] letters = numberAsString.ToArray();
 
-int ilerazy = 10;
+int[] counters = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-for (int x = 1; x < ilerazy; x++)
+foreach (char letter in letters)
 {
-    for (int i = 1; i < 10; i++)
-    {
-        Console.WriteLine(i);
-    }
+    if (letter == '0') { counters[0]++; }
+    else if (letter == '1') { counters[1]++; }
+    else if (letter == '2') { counters[2]++; }
+    else if (letter == '3') { counters[3]++; }
+    else if (letter == '4') { counters[4]++; }
+    else if (letter == '5') { counters[5]++; }
+    else if (letter == '6') { counters[6]++; }
+    else if (letter == '7') { counters[7]++; }
+    else if (letter == '8') { counters[8]++; }
+    else { counters[9]++; }
+}
 
-    for (int j = 10; j > 1; j--)
-    {
-        Console.WriteLine(j);
-    }
-
+for (int i = 0; i < 10; i++)
+{
+    Console.WriteLine(i + " => " + counters[i]);
 }
