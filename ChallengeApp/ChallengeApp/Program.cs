@@ -1,24 +1,24 @@
-﻿long number = 1223445667;
+﻿long number = 9900;
 string numberAsString = number.ToString();
 char[] letters = numberAsString.ToArray();
 
-int[] counters = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+string letters2 = "jaroslaw kaczynski";
 
-foreach (char letter in letters)
+
+int[] counters = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+char[] alphabet = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'w', 'u', 'x', 'y', 'z' };
+
+foreach (char letter in letters2)
 {
-    if (letter == '0') { counters[0]++; }
-    else if (letter == '1') { counters[1]++; }
-    else if (letter == '2') { counters[2]++; }
-    else if (letter == '3') { counters[3]++; }
-    else if (letter == '4') { counters[4]++; }
-    else if (letter == '5') { counters[5]++; }
-    else if (letter == '6') { counters[6]++; }
-    else if (letter == '7') { counters[7]++; }
-    else if (letter == '8') { counters[8]++; }
-    else { counters[9]++; }
+    for (int a = 0; a < alphabet.Length; a++)
+    {
+        if (letter == alphabet[a]) { counters[a]++; }
+       
+    }
 }
 
-for (int i = 0; i < 10; i++)
+for (int i = 0; i < counters.Length; i++)
 {
-    Console.WriteLine(i + " => " + counters[i]);
+    Console.WriteLine(alphabet[i] + " => " + counters[i]);
 }
