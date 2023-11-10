@@ -7,8 +7,19 @@ dayofWeeks[3] = "czwartek";
 dayofWeeks[4] = "piątek";
 dayofWeeks[5] = "sobota";
 dayofWeeks[6] = "niedziela";
-Console.WriteLine(dayofWeeks[2]);
 
-string[] dayofWeeks2 = { "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela" };
-Console.WriteLine(dayofWeeks2[0]);
-Console.WriteLine(dayofWeeks2[6]);
+int ilerazy = 10;
+
+for (int x = 1; x < ilerazy; x++)
+{
+    for (int i = 1; i < 10; i++)
+    {
+        Console.WriteLine(i);
+    }
+
+    for (int j = 10; j > 1; j--)
+    {
+        Console.WriteLine(j);
+    }
+
+}
