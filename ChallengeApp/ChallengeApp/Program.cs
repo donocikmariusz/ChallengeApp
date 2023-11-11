@@ -1,19 +1,11 @@
 ﻿
-Console.WriteLine("Podaj dzień tygodnia: ");
-
-
-Console.WriteLine(" ");
-
-
-string[] dayofWeeks = { "", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela" };
+Console.WriteLine("Podaj number: ");
 string number = Console.ReadLine();
-
+Console.WriteLine(" ");
 int.TryParse(number, out int numberint);
 
-for (int i = 0; i < dayofWeeks.Length; i++)
+
+for (int i = numberint; i >= 0; i--)
 {
-    if (numberint == i)
-    {
-        Console.WriteLine(dayofWeeks[i]);
-    }
+    Console.WriteLine(i);
 }
