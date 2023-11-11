@@ -1,24 +1,21 @@
-﻿long number = 9900;
+﻿long number = 1223445667;
 string numberAsString = number.ToString();
 char[] letters = numberAsString.ToArray();
 
-string letters2 = "jaroslaw kaczynski";
+int[] counters = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
+char[] numbers = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
-int[] counters = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
-char[] alphabet = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'w', 'u', 'x', 'y', 'z' };
-
-foreach (char letter in letters2)
+foreach (char letter in letters)
 {
-    for (int a = 0; a < alphabet.Length; a++)
+    for (int a = 0; a < numbers.Length; a++)
     {
-        if (letter == alphabet[a]) { counters[a]++; }
-       
+        if (letter == numbers[a]) { counters[a]++; }
+
     }
 }
 
-for (int i = 0; i < counters.Length; i++)
+for (int i = 0; i < 10; i++)
 {
-    Console.WriteLine(alphabet[i] + " => " + counters[i]);
+    Console.WriteLine(numbers[i] + " => " + counters[i]);
 }
