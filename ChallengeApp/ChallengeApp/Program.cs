@@ -1,21 +1,19 @@
-﻿long number = 1223445667;
-string numberAsString = number.ToString();
-char[] letters = numberAsString.ToArray();
+﻿
+Console.WriteLine("Podaj dzień tygodnia: ");
 
-int[] counters = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-char[] numbers = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+Console.WriteLine(" ");
 
-foreach (char letter in letters)
+
+string[] dayofWeeks = { "", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela" };
+string number = Console.ReadLine();
+
+int.TryParse(number, out int numberint);
+
+for (int i = 0; i < dayofWeeks.Length; i++)
 {
-    for (int a = 0; a < numbers.Length; a++)
+    if (numberint == i)
     {
-        if (letter == numbers[a]) { counters[a]++; }
-
+        Console.WriteLine(dayofWeeks[i]);
     }
-}
-
-for (int i = 0; i < 10; i++)
-{
-    Console.WriteLine(numbers[i] + " => " + counters[i]);
 }
