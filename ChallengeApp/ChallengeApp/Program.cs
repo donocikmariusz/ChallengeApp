@@ -7,7 +7,7 @@ Employee user3 = new Employee("Mateusz", "Morawiacki", "49");
 user1.AddScore(5);
 user1.AddScore(5);
 user1.AddScore(4);
-user1.AddScore(4);
+user1.AddScore(3);
 user1.AddScore(5);
 
 user2.AddScore(1);
