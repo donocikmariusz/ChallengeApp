@@ -1,39 +1,43 @@
-﻿
-Console.WriteLine("1. C TO F ");
-Console.WriteLine("2. F TO C ");
-Console.WriteLine("Twój wybór :");
+﻿using ChallengeApp;
 
-string number = Console.ReadLine();
-Console.WriteLine(" ");
-int.TryParse(number, out int numberint);
+Employee user1 = new Employee("Zbigniew", "Stonoga", "54");
+Employee user2 = new Employee("Jarosław", "Kaczynski", "65");
+Employee user3 = new Employee("Mateusz", "Morawiacki", "49");
 
-if (numberint == 1)
+user1.AddScore(5);
+user1.AddScore(5);
+user1.AddScore(4);
+user1.AddScore(4);
+user1.AddScore(5);
+
+user2.AddScore(1);
+user2.AddScore(2);
+user2.AddScore(3);
+user2.AddScore(4);
+user2.AddScore(5);
+
+user3.AddScore(5);
+user3.AddScore(5);
+user3.AddScore(3);
+user3.AddScore(4);
+user3.AddScore(1);
+
+List<Employee> list = new List<Employee>()
 {
-    Console.WriteLine("Podaj wartość w stopniach C: ");
-    string wartoscC = Console.ReadLine();
-    Console.WriteLine(" ");
-    float.TryParse(wartoscC, out float wartoscCfloat);
+    user1, user2, user3
+};
 
-   
-    double wynikCtoF = (wartoscCfloat * (9.0/5.0) + 32);
-    Console.WriteLine(wartoscCfloat + " stopni C to " + wynikCtoF + " stopni F ");
+int maxResult = -1;
+Employee userwithMaxValue = null;
+
+foreach (var user in list)
+{
+    if (user.Result > maxResult)
+    {
+        userwithMaxValue = user;
+        maxResult = user.Result;
+    }
 }
 
-else if (numberint == 2)
-{
-    Console.WriteLine("Podaj wartość w stopniach F: ");
-    string wartoscF = Console.ReadLine();
-    Console.WriteLine(" ");
-    float.TryParse(wartoscF, out float wartoscFfloat);
-
-    
-    double wynikFtoC = (5.0/9.0) * (wartoscFfloat - 32);
-    Console.WriteLine(wartoscFfloat + " stopni F to " + wynikFtoC + " stopni C ");
-}
-
-else
-{
-    Console.WriteLine("Niewlasciwy Wybor. Try again");
-}
-
-
+Console.WriteLine("Najwyzsza ilośc punktów ma : " + userwithMaxValue.Name +
+    " " + userwithMaxValue.Surname + " ilość punktów: " + userwithMaxValue.Result);
