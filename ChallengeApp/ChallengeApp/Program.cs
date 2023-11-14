@@ -1,32 +1,43 @@
-﻿using System;
+﻿using ChallengeApp;
 
-Random generator = new Random();
+Employee user1 = new Employee("Zbigniew", "Stonoga", "54");
+Employee user2 = new Employee("Jarosław", "Kaczynski", "65");
+Employee user3 = new Employee("Mateusz", "Morawiacki", "49");
 
-int numberRandom = generator.Next(1, 100);
-int ileprób = 0;
+user1.AddScore(5);
+user1.AddScore(5);
+user1.AddScore(4);
+user1.AddScore(3);
+user1.AddScore(5);
 
-while (true)
+user2.AddScore(1);
+user2.AddScore(2);
+user2.AddScore(3);
+user2.AddScore(4);
+user2.AddScore(5);
+
+user3.AddScore(5);
+user3.AddScore(5);
+user3.AddScore(3);
+user3.AddScore(4);
+user3.AddScore(1);
+
+List<Employee> list = new List<Employee>()
 {
-    Console.WriteLine("Zgadnij Liczbe: ");
-    int userNumber = int.Parse(Console.ReadLine());
+    user1, user2, user3
+};
 
-    if (numberRandom > userNumber)
-    {
-        Console.WriteLine("Za mała. Try Again");
-        ileprób++;
-    }
+int maxResult = -1;
+Employee userwithMaxValue = null;
 
-    else if (numberRandom < userNumber)
+foreach (var user in list)
+{
+    if (user.Result > maxResult)
     {
-        Console.WriteLine("Za duża. Try Again");
-        ileprób++;
-    }
-    else
-    {
-        Console.WriteLine("Dobrze, liczba prób: " + ileprób);
-        break;
+        userwithMaxValue = user;
+        maxResult = user.Result;
     }
 }
 
-
-
+Console.WriteLine("Najwyzsza ilośc punktów ma : " + userwithMaxValue.Name +
+    " " + userwithMaxValue.Surname + " ilość punktów: " + userwithMaxValue.Result);
