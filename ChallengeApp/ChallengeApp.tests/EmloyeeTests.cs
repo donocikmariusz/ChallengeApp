@@ -1,7 +1,7 @@
 ﻿
 namespace ChallengeApp.tests
 {
-    public class EmloyeeTests
+    public class EmployeeTests
     {
         [Test]
         public void MinTest()
@@ -34,10 +34,11 @@ namespace ChallengeApp.tests
             var employee2 = new Employee("Zbigniew", "Stonoga");
             employee2.AddGrades(4);
             employee2.AddGrades(2);
-            employee2.AddGrades(6);
+            employee2.AddGrades(4);
 
             var statistics = employee2.GetStatistics();
-            Assert.AreEqual(4.0, statistics.Average);
+
+            Assert.AreEqual(Math.Round(3.33, 2), Math.Round(statistics.Average, 2));
         }
     }
 }
