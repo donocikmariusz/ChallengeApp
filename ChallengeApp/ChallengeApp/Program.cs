@@ -1,14 +1,21 @@
 ﻿using ChallengeApp;
 
 var employee = new Employee("Parch", "Naczelny");
-employee.AddGrades("4000");
-employee.AddGrades("Parch naczelny");
-employee.AddGrades(2);
-employee.AddGrades(6);
+
+employee.AddGrades(0xa);
+employee.AddGrades("1");
+employee.AddGrades(10.0/5.0);
+employee.AddGrades(1.0);
+employee.AddGrades((byte)2);
+employee.AddGrades(10.0);
+
+
 var statistics = employee.GetStatistics();
 
-Console.WriteLine($"Average : {statistics.Average:N2}");
+Console.WriteLine($"Average : {statistics.Average:N5}");
 Console.WriteLine($"Min: {statistics.Min}");
 Console.WriteLine($"Max: {statistics.Max}");
+
+Console.WriteLine("0xa: " + 0xa);
 
 
