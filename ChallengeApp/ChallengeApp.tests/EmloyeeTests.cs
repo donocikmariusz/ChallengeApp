@@ -17,6 +17,60 @@ namespace ChallengeApp.tests
         }
 
         [Test]
+
+        public void ALetterTest()
+        {
+            var employee1 = new Employee("Jarosław", "Kaczyński");
+            float grade1 = 81;
+            float grade2 = 81;
+            float grade3 = 81;
+
+
+            employee1.AddGrades(grade1);
+            employee1.AddGrades(grade2);
+            employee1.AddGrades(grade3);
+            var statistics = employee1.GetStatistics();
+
+            Assert.That(statistics.AverageLetter, Is.EqualTo('A'));
+        }
+
+        [Test]
+
+        public void BLetterTest()
+        {
+            var employee1 = new Employee("Jarosław", "Kaczyński");
+            float grade1 = 61;
+            float grade2 = 61;
+            float grade3 = 61;
+
+
+            employee1.AddGrades(grade1);
+            employee1.AddGrades(grade2);
+            employee1.AddGrades(grade3);
+            var statistics = employee1.GetStatistics();
+
+            Assert.That(statistics.AverageLetter, Is.EqualTo('B'));
+        }
+
+        [Test]
+
+        public void CLetterTest()
+        {
+            var employee1 = new Employee("Jarosław", "Kaczyński");
+            float grade1 = 41;
+            float grade2 = 41;
+            float grade3 = 41;
+
+
+            employee1.AddGrades(grade1);
+            employee1.AddGrades(grade2);
+            employee1.AddGrades(grade3);
+            var statistics = employee1.GetStatistics();
+
+            Assert.That(statistics.AverageLetter, Is.EqualTo('C'));
+        }
+
+        [Test]
         public void MaxTest()
         {
             var employee1 = new Employee("Jarosław", "Kaczyński");
