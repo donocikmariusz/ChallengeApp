@@ -6,7 +6,7 @@ namespace ChallengeApp.tests
         [Test]
         public void MinTest()
         {
-            var employee = new Employee("Parch", "Naczelny");
+            var employee = new Employee("Parch", "Naczelny", "m", 78);
             employee.AddGrades(2);
             employee.AddGrades(2);
             employee.AddGrades(6);
@@ -19,7 +19,7 @@ namespace ChallengeApp.tests
 
         public void ALetterTest()
         {
-            var employee1 = new Employee("Jarosław", "Kaczyński");
+            var employee1 = new Employee("Jarosław", "Kaczyński", "m", 78);
             float grade1 = 81;
             float grade2 = 81;
             float grade3 = 81;
@@ -36,7 +36,7 @@ namespace ChallengeApp.tests
 
         public void BLetterTest()
         {
-            var employee1 = new Employee("Jarosław", "Kaczyński");
+            var employee1 = new Employee("Jarosław", "Kaczyński", "m", 78);
             float grade1 = 61;
             float grade2 = 61;
             float grade3 = 61;
@@ -53,7 +53,7 @@ namespace ChallengeApp.tests
 
         public void CLetterTest()
         {
-            var employee1 = new Employee("Jarosław", "Kaczyński");
+            var employee1 = new Employee("Jarosław", "Kaczyński", "m", 78);
             float grade1 = 41;
             float grade2 = 41;
             float grade3 = 41;
@@ -70,7 +70,7 @@ namespace ChallengeApp.tests
         [Test]
         public void MaxTest()
         {
-            var employee1 = new Employee("Jarosław", "Kaczyński");
+            var employee1 = new Employee("Jarosław", "Kaczyński", "m", 78);
             employee1.AddGrades(4);
             employee1.AddGrades(2);
             employee1.AddGrades(6);
@@ -82,7 +82,7 @@ namespace ChallengeApp.tests
         [Test]
         public void AverageTest()
         {
-            var employee2 = new Employee("Zbigniew", "Stonoga");
+            var employee2 = new Employee("Zbigniew", "Stonoga", "m", 51);
             employee2.AddGrades(4);
             employee2.AddGrades(2);
             employee2.AddGrades(4);

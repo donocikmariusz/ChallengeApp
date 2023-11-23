@@ -4,23 +4,8 @@ Console.WriteLine("Witamy w programie xyz do oceny pracowników");
 Console.WriteLine("===========================================");
 Console.WriteLine();
 
-var employee = new Employee();
-
-/*
-try
-{
-    Employee emp = null;
-    var name = emp.Surname;
-}
-catch (Exception exception)
-{
-    Console.WriteLine(exception.Message);
-}
-finally
-{
-    Console.WriteLine("Finally here");
-}
-*/
+var employee = new Employee("Jarosław", "Kaczyński", "m", 78);
+employee.ToString();
 
 while (true)
 {
