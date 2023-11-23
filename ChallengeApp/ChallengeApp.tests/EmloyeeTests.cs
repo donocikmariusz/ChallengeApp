@@ -13,7 +13,6 @@ namespace ChallengeApp.tests
 
             var statistics = employee.GetStatistics();
             Assert.AreEqual(2, statistics.Min);
-
         }
 
         [Test]
@@ -24,7 +23,6 @@ namespace ChallengeApp.tests
             float grade1 = 81;
             float grade2 = 81;
             float grade3 = 81;
-
 
             employee1.AddGrades(grade1);
             employee1.AddGrades(grade2);
@@ -42,7 +40,6 @@ namespace ChallengeApp.tests
             float grade1 = 61;
             float grade2 = 61;
             float grade3 = 61;
-
 
             employee1.AddGrades(grade1);
             employee1.AddGrades(grade2);
