@@ -16,6 +16,5 @@ namespace ChallengeApp
         public string Gender { get; private set; }
         public int Age { get; private set; }
 
-
     }
 }

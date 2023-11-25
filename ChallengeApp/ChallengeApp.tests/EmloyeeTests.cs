@@ -6,7 +6,7 @@ namespace ChallengeApp.tests
         [Test]
         public void MinTest()
         {
-            var employee = new Employee("Parch", "Naczelny", "m", 78);
+            var employee = new Employee("Parch", "Naczelny");
             employee.AddGrades(2);
             employee.AddGrades(2);
             employee.AddGrades(6);
@@ -19,7 +19,7 @@ namespace ChallengeApp.tests
 
         public void ALetterTest()
         {
-            var employee1 = new Employee("Jarosław", "Kaczyński", "m", 78);
+            var employee1 = new Employee("Jarosław", "Kaczyński");
             float grade1 = 81;
             float grade2 = 81;
             float grade3 = 81;
@@ -29,14 +29,14 @@ namespace ChallengeApp.tests
             employee1.AddGrades(grade3);
             var statistics = employee1.GetStatistics();
 
-            Assert.That(statistics.AverageLetter, Is.EqualTo('A'));
+            Assert.That(statistics.AverageLetter, Is.EqualTo("A"));
         }
 
         [Test]
 
         public void BLetterTest()
         {
-            var employee1 = new Employee("Jarosław", "Kaczyński", "m", 78);
+            var employee1 = new Employee("Jarosław", "Kaczyński");
             float grade1 = 61;
             float grade2 = 61;
             float grade3 = 61;
@@ -46,14 +46,14 @@ namespace ChallengeApp.tests
             employee1.AddGrades(grade3);
             var statistics = employee1.GetStatistics();
 
-            Assert.That(statistics.AverageLetter, Is.EqualTo('B'));
+            Assert.That(statistics.AverageLetter, Is.EqualTo("B"));
         }
 
         [Test]
 
         public void CLetterTest()
         {
-            var employee1 = new Employee("Jarosław", "Kaczyński", "m", 78);
+            var employee1 = new Employee("Jarosław", "Kaczyński");
             float grade1 = 41;
             float grade2 = 41;
             float grade3 = 41;
@@ -64,13 +64,13 @@ namespace ChallengeApp.tests
             employee1.AddGrades(grade3);
             var statistics = employee1.GetStatistics();
 
-            Assert.That(statistics.AverageLetter, Is.EqualTo('C'));
+            Assert.That(statistics.AverageLetter, Is.EqualTo("C"));
         }
 
         [Test]
         public void MaxTest()
         {
-            var employee1 = new Employee("Jarosław", "Kaczyński", "m", 78);
+            var employee1 = new Employee("Jarosław", "Kaczyński");
             employee1.AddGrades(4);
             employee1.AddGrades(2);
             employee1.AddGrades(6);
@@ -82,7 +82,7 @@ namespace ChallengeApp.tests
         [Test]
         public void AverageTest()
         {
-            var employee2 = new Employee("Zbigniew", "Stonoga", "m", 51);
+            var employee2 = new Employee("Zbigniew", "Stonoga");
             employee2.AddGrades(4);
             employee2.AddGrades(2);
             employee2.AddGrades(4);
