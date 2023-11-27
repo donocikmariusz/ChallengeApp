@@ -5,7 +5,6 @@
         private List<float> grades = new List<float>();
 
         public Supervisor(string name, string surname)
-
         {
             this.Name = name;
             this.Surname = surname;
@@ -38,17 +37,18 @@
             throw new NotImplementedException();
         }
 
+        public void Addgrade(int grade)
+        {
+            throw new NotImplementedException();
+        }
+        public void Addgrade(float grade)
+        {
+            throw new NotImplementedException();
+        }
+
         public void AddGrades(float grade)
         {
-            if (grade >= 0 && grade <= 100)
-            {
-                this.grades.Add(grade);
-            }
-
-            else
-            {
-                throw new Exception("invalid grade value");
-            }
+            this.grades.Add(grade);
         }
         public void AddGrades(string grade)
         {
@@ -63,6 +63,11 @@
             }
         }
         public void AddGrades(byte grade)
+        {
+            var grade1 = (float)grade;
+            this.AddGrades(grade1);
+        }
+        public void AddGrades(int grade)
         {
             var grade1 = (float)grade;
             this.AddGrades(grade1);
@@ -107,7 +112,8 @@
                 case "-3":
                 case "3-":
                     this.AddGrades(35);
-                    break;  
+                    break;
+
                 case "+2":
                 case "2+":
                     this.AddGrades(25);
@@ -189,5 +195,6 @@
             }
             return statistics;
         }
+
     }
 }

@@ -5,7 +5,6 @@
         private List<float> grades = new List<float>();
 
         public Employee(string name, string surname)
-
         {
             this.Name = name;
             this.Surname = surname;
@@ -17,6 +16,10 @@
         {
             throw new NotImplementedException();
         }
+        public void Addgrade(int grade)
+        {
+            throw new NotImplementedException();
+        }
 
         public void Addgrade(char grade)
         {
@@ -24,6 +27,11 @@
         }
 
         public void Addgrade(string grade)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Addgrade(float grade)
         {
             throw new NotImplementedException();
         }

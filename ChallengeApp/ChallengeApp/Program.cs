@@ -5,6 +5,7 @@ Console.WriteLine("===========================================");
 Console.WriteLine();
 
 var employee = new Employee("Zbigniew", "Stonoga");
+var employee2 = new EmployeeInFile("Parch", "Naczelny");
 var supervisor = new Supervisor("Jarosław", "Kaczyński");
 
 while (true)
@@ -32,7 +33,6 @@ while (true)
             {
                 Console.WriteLine($"Exception catched: {e.Message}");
             }
-
         }
 
         var statistics = supervisor.GetStatistics();
@@ -46,9 +46,8 @@ while (true)
         break;
     }
 
-    else if (option == "e" || option =="E")
+    else if (option == "e" || option == "E")
     {
-
         while (true)
         {
             Console.WriteLine("Podaj kolejną ocenę pracownika");
@@ -66,7 +65,6 @@ while (true)
             {
                 Console.WriteLine($"Exception catched: {e.Message}");
             }
-
         }
 
         var statistics = employee.GetStatistics();
@@ -85,3 +83,6 @@ while (true)
     }
 
 }
+
+
+

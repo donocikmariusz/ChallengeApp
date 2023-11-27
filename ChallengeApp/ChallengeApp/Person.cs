@@ -9,7 +9,6 @@ namespace ChallengeApp
             this.Surname = surname;
             this.Gender = gender;
             this.Age = age;
-
         }
         public string Name { get; private set; }
         public string Surname { get; private set; }
