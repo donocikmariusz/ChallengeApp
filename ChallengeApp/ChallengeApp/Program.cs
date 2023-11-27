@@ -4,18 +4,17 @@ Console.WriteLine("Witamy w programie xyz do oceny pracowników");
 Console.WriteLine("===========================================");
 Console.WriteLine();
 
-var employee = new Employee("Zbigniew", "Stonoga");
-var employee2 = new EmployeeInFile("Parch", "Naczelny");
-var supervisor = new Supervisor("Jarosław", "Kaczyński");
+var employee = new EmployeeInFile("Zbigniew", "Stonoga");
+/*var supervisor = new Supervisor("Jarosław", "Kaczyński");
 
 while (true)
 {
-    Console.WriteLine("Wybierz pracownika 's' - supervisor, 'e' - pracownik");
+    Console.WriteLine("Wybierz pracownika 'S' - supervisor, 'E' - pracownik");
     var option = Console.ReadLine();
 
     if (option == "s" || option == "S")
     {
-
+        Console.WriteLine("Wybrano Supervisior");
         while (true)
         {
             Console.WriteLine("Podaj kolejną ocenę pracownika");
@@ -27,7 +26,7 @@ while (true)
             }
             try
             {
-                supervisor.AddGrades1(input);
+                supervisor.AddGrades(input);
             }
             catch (Exception e)
             {
@@ -46,8 +45,10 @@ while (true)
         break;
     }
 
-    else if (option == "e" || option == "E")
+    else if (option == "e" || option =="E")
     {
+        Console.WriteLine("Wybrano Employee");       */
+
         while (true)
         {
             Console.WriteLine("Podaj kolejną ocenę pracownika");
@@ -67,7 +68,7 @@ while (true)
             }
         }
 
-        var statistics = employee.GetStatistics();
+var statistics = employee.GetStatistics();
 
         Console.WriteLine($"Statistics for: {employee.Name}, {employee.Surname}");
         Console.WriteLine($"AVG: {statistics.Average:N3}");
@@ -75,14 +76,13 @@ while (true)
         Console.WriteLine($"MAX: {statistics.Max}");
         Console.WriteLine();
         Console.WriteLine($"Asses As: {statistics.AverageLetter}");
-        break;
+   /*     break;
     }
     else
     {
         Console.WriteLine("Niewłaściwy wybór. Try Again.");
     }
-
+   
 }
-
-
-
+   */
+ 

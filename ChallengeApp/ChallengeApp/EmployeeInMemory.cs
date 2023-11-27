@@ -2,40 +2,90 @@
 {
     public class EmployeeInMemory : EmployeeBase
     {
-        public EmployeeInMemory(string name, string surname) 
+        private List<float> grades = new List<float>();
+        public EmployeeInMemory(string name, string surname)
             : base(name, surname)
         {
-
         }
-
-        public override void Addgrade(double grade)
+        public override void AddGrades(float grade)
         {
-            throw new NotImplementedException();
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
+            }
+            else
+            {
+                throw new Exception("Invalid grade value");
+            }
         }
-
-        public override void Addgrade(char grade)
+        public override void AddGrades(string grade)
         {
-            throw new NotImplementedException();
+            if (float.TryParse(grade, out float result))
+            {
+                this.AddGrades(result);
+            }
+            else
+            {
+                throw new Exception("Wrong letter");
+            }
         }
-
-        public override void Addgrade(string grade)
+        public override void AddGrades(char grade)
         {
-            throw new NotImplementedException();
+            var gradeAsFloat = (float)grade;
+            this.AddGrades(gradeAsFloat);
         }
-
-        public override void Addgrade(int grade)
+        public override void AddGrades(short grade)
         {
-            throw new NotImplementedException();
+            var gradeAsFloat = (float)grade;
+            this.AddGrades(gradeAsFloat);
         }
-
-        public override void Addgrade(float grade)
+        public override void AddGrades(decimal grade)
         {
-            throw new NotImplementedException();
+            var gradeAsFloat = (float)grade;
+            this.AddGrades(gradeAsFloat);
         }
-
+        public override void AddGrades(double grade)
+        {
+            var gradeAsFloat = (float)grade;
+            this.AddGrades(gradeAsFloat);
+        }
         public override Statistics GetStatistics()
         {
-            throw new NotImplementedException();
+            var statistics = new Statistics();
+            statistics.Average = 0;
+            statistics.Max = float.MinValue;
+            statistics.Min = float.MaxValue;
+
+            foreach (var grade in this.grades)
+            {
+                statistics.Max = Math.Max(statistics.Max, grade);
+                statistics.Max = Math.Max(statistics.Max, grade);
+                statistics.Min = Math.Min(statistics.Min, grade);
+                statistics.Average += grade;
+            }
+
+            statistics.Average /= this.grades.Count;
+
+            switch (statistics.Average)
+            {
+                case var average when average >= 80:
+                    statistics.AverageLetter = "A";
+                    break;
+                case var average when average >= 60:
+                    statistics.AverageLetter = "B";
+                    break;
+                case var average when average >= 40:
+                    statistics.AverageLetter = "C";
+                    break;
+                case var average when average >= 20:
+                    statistics.AverageLetter = "D";
+                    break;
+                default:
+                    statistics.AverageLetter = "E";
+                    break;
+            }
+            return statistics;
         }
     }
 }
+

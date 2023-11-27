@@ -4,11 +4,12 @@
     {
         string Name { get; }
         string Surname { get; }
-        void Addgrade(double grade);
-        void Addgrade(char grade);
-        void Addgrade(string grade);
-        void Addgrade(int grade);
-        void Addgrade(float grade);
+        void AddGrades(float grade);
+        void AddGrades(string grade);
+        void AddGrades(char grade);
+        void AddGrades(short grade);
+        void AddGrades(decimal grade);
+        void AddGrades(double grade);
 
         Statistics GetStatistics();
     }

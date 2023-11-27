@@ -12,68 +12,55 @@
         public string Name { get; set; }
         public string Surname { get; set; }
 
-        public void Addgrade(double grade)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Addgrade(decimal grade)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Addgrade(short grade)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Addgrade(char grade)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Addgrade(string grade)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Addgrade(int grade)
-        {
-            throw new NotImplementedException();
-        }
-        public void Addgrade(float grade)
-        {
-            throw new NotImplementedException();
-        }
-
         public void AddGrades(float grade)
         {
-            this.grades.Add(grade);
-        }
-        public void AddGrades(string grade)
-        {
-            if (float.TryParse(grade, out float result))
+            if (grade >= 0 && grade <= 100)
             {
-                this.AddGrades(result);
+                this.grades.Add(grade);
             }
+
             else
             {
-                throw new Exception("wrong letter");
-
+                throw new Exception("Invalid grade value");
             }
         }
+
         public void AddGrades(byte grade)
         {
-            var grade1 = (float)grade;
-            this.AddGrades(grade1);
-        }
-        public void AddGrades(int grade)
-        {
-            var grade1 = (float)grade;
-            this.AddGrades(grade1);
+            var gradeAsFloat = (float)grade;
+            this.AddGrades(gradeAsFloat);
         }
 
-        public void AddGrades1(string grade)
+        public void AddGrades(char grade)
+        {
+            switch (grade)
+            {
+                case 'A':
+                case 'a':
+                    this.AddGrades(100);
+                    break;
+                case 'B':
+                case 'b':
+                    this.AddGrades(80);
+                    break;
+                case 'C':
+                case 'c':
+                    this.AddGrades(60);
+                    break;
+                case 'D':
+                case 'd':
+                    this.AddGrades(40);
+                    break;
+                case 'E':
+                case 'e':
+                    this.AddGrades(20);
+                    break;
+                default:
+                    throw new Exception("wrong letter");
+            }
+        }
+
+        public void AddGrades(string grade)
         {
             switch (grade)
             {
@@ -112,8 +99,7 @@
                 case "-3":
                 case "3-":
                     this.AddGrades(35);
-                    break;
-
+                    break;  
                 case "+2":
                 case "2+":
                     this.AddGrades(25);
@@ -133,26 +119,26 @@
                     this.AddGrades(0);
                     break;
                 default:
-                    throw new Exception("wrong grade (1-6)");
+                    throw new Exception("Wrong grade (1-6)");
             }
         }
 
         public void AddGrades(short grade)
         {
-            var grade1 = (float)grade;
-            this.AddGrades(grade1);
+            var gradeAsFloat = (float)grade;
+            this.AddGrades(gradeAsFloat);
         }
 
         public void AddGrades(decimal grade)
         {
-            var grade1 = (float)grade;
-            this.AddGrades(grade1);
+            var gradeAsFloat = (float)grade;
+            this.AddGrades(gradeAsFloat);
         }
 
         public void AddGrades(double grade)
         {
-            var grade1 = (float)grade;
-            this.AddGrades(grade1);
+            var gradeAsFloat = (float)grade;
+            this.AddGrades(gradeAsFloat);
         }
 
         public Statistics GetStatistics()
@@ -195,6 +181,5 @@
             }
             return statistics;
         }
-
     }
 }
