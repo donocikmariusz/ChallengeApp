@@ -5,7 +5,14 @@ Console.WriteLine("===========================================");
 Console.WriteLine();
 
 var employee = new EmployeeInFile("Zbigniew", "Stonoga");
-/*var supervisor = new Supervisor("Jarosław", "Kaczyński");
+var employee1 = new EmployeeInMemory("Jarosław", "Kaczyński");
+employee1.GradeAdded += EmployeeGradeAdded;
+employee.GradeAdded += EmployeeGradeAdded;
+
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("Dodano nową ocenę");
+}
 
 while (true)
 {
@@ -26,7 +33,7 @@ while (true)
             }
             try
             {
-                supervisor.AddGrades(input);
+                employee1.AddGrades(input);
             }
             catch (Exception e)
             {
@@ -34,9 +41,9 @@ while (true)
             }
         }
 
-        var statistics = supervisor.GetStatistics();
+        var statistics = employee1.GetStatistics();
 
-        Console.WriteLine($"Statistics for: {supervisor.Name}, {supervisor.Surname}");
+        Console.WriteLine($"Statistics for: {employee1.Name}, {employee1.Surname}");
         Console.WriteLine($"AVG: {statistics.Average:N3}");
         Console.WriteLine($"MIN: {statistics.Min}");
         Console.WriteLine($"MAX: {statistics.Max}");
@@ -45,9 +52,9 @@ while (true)
         break;
     }
 
-    else if (option == "e" || option =="E")
+    else if (option == "e" || option == "E")
     {
-        Console.WriteLine("Wybrano Employee");       */
+        Console.WriteLine("Wybrano Employee");
 
         while (true)
         {
@@ -68,7 +75,7 @@ while (true)
             }
         }
 
-var statistics = employee.GetStatistics();
+        var statistics = employee.GetStatistics();
 
         Console.WriteLine($"Statistics for: {employee.Name}, {employee.Surname}");
         Console.WriteLine($"AVG: {statistics.Average:N3}");
@@ -76,13 +83,12 @@ var statistics = employee.GetStatistics();
         Console.WriteLine($"MAX: {statistics.Max}");
         Console.WriteLine();
         Console.WriteLine($"Asses As: {statistics.AverageLetter}");
-   /*     break;
+        break;
     }
     else
     {
         Console.WriteLine("Niewłaściwy wybór. Try Again.");
     }
-   
+
 }
-   */
- 
+
