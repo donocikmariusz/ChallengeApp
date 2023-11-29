@@ -3,7 +3,7 @@
     public class EmployeeInFile : EmployeeBase
     {
         public override event GradeAddedDelegate GradeAdded;
-        private const string fileName = "grades.txt";
+        private const string fileName = "grades2.txt";
         public EmployeeInFile(string name, string surname)
             : base(name, surname)
         {
@@ -108,46 +108,15 @@
 
         private Statistics CountStatistics(List<float> grades)
         {
-            var statistics = new Statistics();
-            statistics.Average = 0;
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
+           var statistics = new Statistics();
 
             foreach (var grade in grades)
             {
-                if (grade >= 0)
-                {
-                    statistics.Max = Math.Max(statistics.Max, grade);
-                    statistics.Min = Math.Min(statistics.Min, grade);
-                    statistics.Average += grade;
-                }
-            }
-
-            statistics.Average /= grades.Count;
-
-            switch (statistics.Average)
-            {
-                case var average when average == 100:
-                    statistics.AverageLetter = "6";
-                    break;
-                case var average when average >= 80:
-                    statistics.AverageLetter = "5";
-                    break;
-                case var average when average >= 60:
-                    statistics.AverageLetter = "4";
-                    break;
-                case var average when average >= 40:
-                    statistics.AverageLetter = "3";
-                    break;
-                case var average when average >= 20:
-                    statistics.AverageLetter = "2";
-                    break;
-                default:
-                    statistics.AverageLetter = "1";
-                    break;
+                statistics.AddGrade(grade);
             }
             return statistics;
         }
+
     }
 }
 

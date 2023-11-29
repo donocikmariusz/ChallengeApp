@@ -6,6 +6,7 @@ Console.WriteLine();
 
 var employee = new EmployeeInFile("Zbigniew", "Stonoga");
 var employee1 = new EmployeeInMemory("Jarosław", "Kaczyński");
+
 employee1.GradeAdded += EmployeeGradeAdded;
 employee.GradeAdded += EmployeeGradeAdded;
 
